@@ -13,7 +13,7 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: auto;
+  margin: 0 auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
