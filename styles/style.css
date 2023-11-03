@@ -188,9 +188,11 @@ ol {
 }
 
 .search-form__label:hover {
-  text-decoration: underline; 
-  text-decoration-thickness: 1px; 
-  text-underline-offset: 4px;
+  text-decoration: none;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
 }
 
 .search-form__label:has(:active) {
