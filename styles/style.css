@@ -10,7 +10,7 @@ html {
 
 .page {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
   color: #fff;
@@ -55,7 +55,6 @@ ol {
   align-items: flex-end;
   gap: 30px;
   width: 1140px;
-  margin: 133px 30px;
 }
 
 .result {
@@ -94,15 +93,14 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-size: 18px;
-  line-height: 22px;
+  font: inherit;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
-  width: 212px;
-  height: 27px;
 }
 
 .search-form__pseudo-checkbox {
@@ -112,22 +110,21 @@ ol {
   border: 1px solid #FFF;
 }
 
-.search-form__checkbox:active + .search-form__pseudo-checkbox::before { 
+.search-form__pseudo-checkbox::before {
   content: '';
-  display: block;
+  display: none;
   width: 15px;
   height: 15px; 
   margin: 1px;
   background-color: #fff;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before { 
-  content: '';
+.search-form__checkbox:active + .search-form__pseudo-checkbox::before { 
   display: block;
-  width: 15px;
-  height: 15px; 
-  margin: 1px;
-  background-color: #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before { 
+  display: block;
 }
 
 .button {
@@ -135,11 +132,10 @@ ol {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  height: 34px;
   border: 1px solid #FFF;
   color: #FFF;
-  font-family: Fira Sans Condensed, sans-serif;
-  font-weight: 700;
-  font-size: 18px;
+  font: inherit;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
@@ -168,12 +164,10 @@ ol {
 .search-form__submit-button {
   align-self: flex-end;
   width: 194px;
-  height: 34px;
 }
 
 .more-button {
   width: 399px;
-  height: 34px;
 }
 
 .search-form__label {
@@ -181,20 +175,8 @@ ol {
   align-items: center;
   gap: 5px;
   width: fit-content;
-  height: 23px;
   cursor: pointer;
 }
-
-/*
-.search-form__label:last-child:not(:nth-child(3)) {
-  border-top: 1px solid #FFF;
-  border-bottom: 1px solid #FFF;
-}
-
-.search-form__label:last-child:not(:nth-child(3)):has(:focus-visible) {
-  outline: 1px solid #fff;
-}
-*/
 
 .search-form__label:focus {
   outline: none;
@@ -211,15 +193,13 @@ ol {
   text-underline-offset: 4px;
 }
 
-.search-form__label:last-child:not(:nth-child(3)):hover {
-  text-decoration: none;
-  cursor: text;
+.search-form__label:has(:active) {
+  outline: none;
 }
 
 .search-form__label-text {
   color: #FFF;
-  font-family: Fira Sans Condensed, sans-serif;
-  font-size: 18px;
+  font: inherit;
 }
 
 .search-form__textfield {
@@ -227,11 +207,10 @@ ol {
   width: 225px;
   height: 27px;
   border: none;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   color: rgba(255, 255, 255, 0.70);
-  font-family: Fira Sans Condensed, sans-serif;
-  font-size: 17px;
+  font: inherit;
   background-color: transparent;
   appearance: none;
 }
@@ -254,6 +233,7 @@ ol {
 }
 
 .search-form__textfield:active {
+  border: none;
   outline: 1px solid #FFF;
 }
 
@@ -268,16 +248,14 @@ ol {
 
 .title {
   font-family: Oswald, sans-serif;
+  font-weight: 700;
   font-size: 75px;
-  line-height: 90%;
+  line-height: 94%;
   text-transform: uppercase;
 }
 
 .content__accent {
   color: #545050;
-  font-family: Oswald, sans-serif;
-  line-height: 100%;
-  text-transform: uppercase;
 }
 
 .content__list {
@@ -286,7 +264,8 @@ ol {
   flex-direction: column;
   height: 298px;
   padding: 2px;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .content__list-item {
@@ -315,8 +294,6 @@ ol {
 .content__card-link:hover {
   color: #fff;
   text-decoration: underline; 
-  text-decoration-thickness: 1px; 
-  text-underline-offset: 2px;
   cursor: pointer;
 }
 
@@ -339,11 +316,13 @@ ol {
 }
 
 .content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   max-width: 197px;
 }
 
 .content__video-card-title {
-  margin-bottom: 6px;
   overflow: hidden;
   color: #FFF;
   font-family: Oswald, sans-serif;
@@ -357,9 +336,8 @@ ol {
 .content__video-card-description {
   overflow: hidden;
   color: #FFF;
-  font-family: Fira Sans Condensed, sans-serif;
-  font-size: 18px;
-  line-height: 100%;
+  font: inherit;
+  line-height: 90%;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
